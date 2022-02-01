@@ -1,7 +1,9 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-const DB_CLUSTER =
-  "mongodb+srv://bmw24:VpWNEYo3bZTpvPcJ@cluster0.ud91g.mongodb.net/meetups?retryWrites=true&w=majority";
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const cluster = process.env.DB_CLUSTER;
+const DB_CLUSTER = `mongodb+srv://${user}:${password}@cluster0.ud91g.mongodb.net/${cluster}?retryWrites=true&w=majority`;
 
 /**
  * Retrieves all meetups from database
